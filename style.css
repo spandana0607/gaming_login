@@ -1,0 +1,893 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #050509;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(0, 255, 204, 0.12),
+            transparent 30%),
+
+        radial-gradient(circle at 85% 80%,
+            rgba(126, 0, 255, 0.18),
+            transparent 30%),
+
+        linear-gradient(135deg,
+            #030308,
+            #09031a,
+            #02050f);
+
+    overflow: hidden;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 255, 255, 0.05) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 255, 0.05) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    transform: perspective(500px)
+        rotateX(60deg)
+        scale(1.5);
+
+    animation: gridMove 10s linear infinite;
+}
+
+@keyframes gridMove {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 60px;
+    }
+
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles span {
+    position: fixed;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #00ffff;
+
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff;
+
+    animation: float 6s infinite ease-in-out;
+}
+
+.particles span:nth-child(1) {
+    top: 10%;
+    left: 10%;
+}
+
+.particles span:nth-child(2) {
+    top: 25%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(3) {
+    top: 70%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+    top: 80%;
+    left: 90%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(5) {
+    top: 45%;
+    left: 5%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(6) {
+    top: 15%;
+    left: 60%;
+    animation-delay: 1.5s;
+}
+
+.particles span:nth-child(7) {
+    top: 90%;
+    left: 45%;
+    animation-delay: 2.5s;
+}
+
+.particles span:nth-child(8) {
+    top: 50%;
+    left: 95%;
+    animation-delay: 3.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.portal-container {
+    width: min(1100px, 92%);
+    margin: auto;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 40px 0;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    font-family: "Orbitron", sans-serif;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+
+    color: #00ffff;
+
+    box-shadow:
+        0 0 10px #00ffff,
+        inset 0 0 10px rgba(0, 255, 255, 0.4);
+
+    font-weight: bold;
+}
+
+.logo h2 {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.logo h2 span {
+    color: #00ffff;
+}
+
+/* =========================
+   TOGGLE
+========================= */
+
+#portal-toggle {
+    display: none;
+}
+
+/* =========================
+   GAMING CARD
+========================= */
+
+.gaming-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 600px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(12, 16, 30, 0.9),
+            rgba(4, 5, 12, 0.95)
+        );
+
+    box-shadow:
+        0 0 40px rgba(0, 255, 255, 0.08),
+        0 0 100px rgba(126, 0, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.gaming-side {
+    position: relative;
+
+    padding: 60px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.glow-circle {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(0, 255, 255, 0.2);
+
+    box-shadow:
+        0 0 40px rgba(0, 255, 255, 0.2),
+        inset 0 0 40px rgba(126, 0, 255, 0.2);
+
+    animation: rotateCircle 10s linear infinite;
+}
+
+.glow-circle::before,
+.glow-circle::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 2px dashed rgba(255, 0, 255, 0.3);
+}
+
+.glow-circle::before {
+    inset: 35px;
+}
+
+.glow-circle::after {
+    inset: 70px;
+}
+
+@keyframes rotateCircle {
+
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+}
+
+/* =========================
+   CSS CONTROLLER
+========================= */
+
+.controller {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 35px;
+
+    animation: controllerFloat 4s ease-in-out infinite;
+}
+
+@keyframes controllerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+
+}
+
+.controller-body {
+    width: 260px;
+    height: 120px;
+
+    margin: auto;
+
+    position: relative;
+
+    border-radius: 60px 60px 45px 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #161d35,
+            #070a14
+        );
+
+    border: 2px solid rgba(0, 255, 255, 0.5);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.4),
+        inset 0 0 20px rgba(126, 0, 255, 0.2);
+}
+
+/* D-PAD */
+
+.d-pad {
+    position: absolute;
+
+    top: 38px;
+    left: 35px;
+
+    width: 40px;
+    height: 40px;
+
+    background: #00bcd4;
+
+    box-shadow: 0 0 12px #00ffff;
+}
+
+.d-pad::before,
+.d-pad::after {
+    content: "";
+
+    position: absolute;
+
+    background: #00bcd4;
+
+    box-shadow: 0 0 12px #00ffff;
+}
+
+.d-pad::before {
+    width: 70px;
+    height: 22px;
+
+    left: -15px;
+    top: 9px;
+}
+
+.d-pad::after {
+    width: 22px;
+    height: 70px;
+
+    left: 9px;
+    top: -15px;
+}
+
+/* BUTTONS */
+
+.action-buttons {
+    position: absolute;
+
+    top: 32px;
+    right: 30px;
+
+    width: 80px;
+    height: 60px;
+}
+
+.action-buttons span {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    background: #ff00cc;
+
+    color: white;
+
+    box-shadow: 0 0 12px #ff00cc;
+}
+
+.action-buttons span:nth-child(1) {
+    top: 18px;
+    left: 55px;
+}
+
+.action-buttons span:nth-child(2) {
+    top: 35px;
+    left: 28px;
+}
+
+.action-buttons span:nth-child(3) {
+    top: 0;
+    left: 28px;
+}
+
+.action-buttons span:nth-child(4) {
+    top: 18px;
+    left: 0;
+}
+
+/* =========================
+   GAMING TEXT
+========================= */
+
+.gaming-text {
+    position: relative;
+    z-index: 2;
+}
+
+.small-title,
+.portal-label {
+    color: #00ffff;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.gaming-text h1 {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(35px, 5vw, 65px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.gaming-text h1 span {
+    color: #ff00cc;
+
+    text-shadow:
+        0 0 10px #ff00cc,
+        0 0 25px rgba(255, 0, 204, 0.5);
+}
+
+.description,
+.form-description {
+    color: #a9b1c7;
+
+    line-height: 1.8;
+
+    max-width: 450px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 45px;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats strong {
+    color: #ffffff;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 20px;
+}
+
+.stats span {
+    color: #00ffff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-top: 5px;
+}
+
+/* =========================
+   FORM SIDE
+========================= */
+
+.form-side {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    overflow: hidden;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form {
+    position: absolute;
+
+    inset: 0;
+
+    padding: 70px 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.5s ease;
+}
+
+/* LOGIN */
+
+.login-form {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* SIGNUP */
+
+.signup-form {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =========================
+   TOGGLE ANIMATION
+========================= */
+
+#portal-toggle:checked ~ .gaming-card .login-form {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#portal-toggle:checked ~ .gaming-card .signup-form {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* =========================
+   FORM CONTENT
+========================= */
+
+.form h2 {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(32px, 4vw, 52px);
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+}
+
+.form-description {
+    margin-bottom: 35px;
+}
+
+.form form {
+    width: 100%;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-box {
+    position: relative;
+
+    margin-bottom: 18px;
+}
+
+.input-box input {
+    width: 100%;
+
+    padding:
+        17px
+        20px
+        17px
+        50px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    transition: 0.3s;
+}
+
+.input-box input::placeholder {
+    color: #6f7890;
+}
+
+.input-box input:focus {
+    border-color: #00ffff;
+
+    box-shadow:
+        0 0 10px rgba(0, 255, 255, 0.25);
+}
+
+.input-icon {
+    position: absolute;
+
+    top: 50%;
+    left: 18px;
+
+    transform: translateY(-50%);
+
+    color: #00ffff;
+
+    z-index: 2;
+}
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    font-size: 12px;
+}
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #a9b1c7;
+}
+
+.options a {
+    color: #00ffff;
+
+    text-decoration: none;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.form button {
+    width: 100%;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    color: #02050f;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00ffff,
+            #00c6ff
+        );
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.35);
+
+    transition: 0.3s;
+}
+
+.form button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 35px rgba(0, 255, 255, 0.7);
+}
+
+.form button span {
+    margin-left: 8px;
+
+    font-size: 20px;
+}
+
+/* =========================
+   SWITCH TEXT
+========================= */
+
+.switch-text {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #a9b1c7;
+
+    font-size: 13px;
+}
+
+.switch-text label {
+    color: #ff00cc;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    margin-left: 5px;
+
+    transition: 0.3s;
+}
+
+.switch-text label:hover {
+    text-shadow: 0 0 10px #ff00cc;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 850px) {
+
+    .portal-container {
+        width: min(500px, 92%);
+    }
+
+    .gaming-card {
+        grid-template-columns: 1fr;
+    }
+
+    .gaming-side {
+        padding: 45px 30px;
+        min-height: 450px;
+    }
+
+    .form-side {
+        min-height: 650px;
+    }
+
+    .form {
+        padding: 55px 35px;
+    }
+
+    .stats {
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        justify-content: center;
+    }
+
+    .controller-body {
+        transform: scale(0.8);
+    }
+
+    .gaming-text h1 {
+        font-size: 38px;
+    }
+
+    .stats strong {
+        font-size: 16px;
+    }
+
+    .stats span {
+        font-size: 8px;
+    }
+
+    .form {
+        padding: 45px 25px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}

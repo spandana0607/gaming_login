@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gaming Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main class="portal-container">
+
+        <!-- Gaming Logo -->
+        <div class="logo">
+            <div class="logo-icon">G</div>
+            <h2>GAME<span>ZONE</span></h2>
+        </div>
+
+        <!-- CSS Toggle -->
+        <input type="checkbox" id="portal-toggle">
+
+        <div class="gaming-card">
+
+            <!-- LEFT SIDE -->
+            <div class="gaming-side">
+
+                <div class="glow-circle"></div>
+
+                <div class="controller">
+                    <div class="controller-body">
+
+                        <div class="d-pad">
+                            <span class="up"></span>
+                            <span class="down"></span>
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </div>
+
+                        <div class="action-buttons">
+                            <span>A</span>
+                            <span>B</span>
+                            <span>X</span>
+                            <span>Y</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="gaming-text">
+                    <p class="small-title">WELCOME TO THE</p>
+                    <h1>ULTIMATE<br><span>GAMING</span> PORTAL</h1>
+                    <p class="description">
+                        Enter the arena, challenge your limits
+                        and unlock your next adventure.
+                    </p>
+                </div>
+
+                <div class="stats">
+                    <div>
+                        <strong>24K+</strong>
+                        <span>PLAYERS</span>
+                    </div>
+
+                    <div>
+                        <strong>500+</strong>
+                        <span>GAMES</span>
+                    </div>
+
+                    <div>
+                        <strong>99%</strong>
+                        <span>FUN</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="form-side">
+
+                <!-- LOGIN FORM -->
+                <div class="form login-form">
+
+                    <p class="portal-label">PLAYER ACCESS</p>
+
+                    <h2>WELCOME<br>BACK!</h2>
+
+                    <p class="form-description">
+                        Sign in and continue your adventure.
+                    </p>
+
+                    <form>
+
+                        <div class="input-box">
+                            <span class="input-icon">◉</span>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" placeholder="Password" required>
+                        </div>
+
+                        <div class="options">
+
+                            <label class="remember">
+                                <input type="checkbox">
+                                <span>Remember me</span>
+                            </label>
+
+                            <a href="#">Forgot password?</a>
+
+                        </div>
+
+                        <button type="submit">
+                            ENTER GAME
+                            <span>→</span>
+                        </button>
+
+                    </form>
+
+                    <p class="switch-text">
+                        New player?
+                        <label for="portal-toggle">CREATE ACCOUNT</label>
+                    </p>
+
+                </div>
+
+
+                <!-- SIGNUP FORM -->
+                <div class="form signup-form">
+
+                    <p class="portal-label">NEW PLAYER</p>
+
+                    <h2>JOIN THE<br>ARENA!</h2>
+
+                    <p class="form-description">
+                        Create your account and start playing.
+                    </p>
+
+                    <form>
+
+                        <div class="input-box">
+                            <span class="input-icon">◉</span>
+                            <input type="text" placeholder="Player Name" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="input-icon">✉</span>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" placeholder="Create Password" required>
+                        </div>
+
+                        <button type="submit">
+                            CREATE ACCOUNT
+                            <span>→</span>
+                        </button>
+
+                    </form>
+
+                    <p class="switch-text">
+                        Already a player?
+                        <label for="portal-toggle">SIGN IN</label>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
