@@ -6,7 +6,7 @@ This project combines neon cyberpunk visuals, animated particles, a CSS-generate
 
 ## ✨ Live Preview
 
-🔗 **Live Demo:** Add your deployed website link here
+🔗 **Live Demo:https://spandana0607.github.io/gaming_login/
 
 ## 📸 Project Overview
 
@@ -163,7 +163,7 @@ lamp_login/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/lamp_login.git
+git clone https://github.com/spandana0607/lamp_login.git
 ```
 
 ### 2. Open the project
